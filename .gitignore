@@ -5,3 +5,4 @@ local_settings.py
 /media/*
 *.sqlite
 /whoosh_index/*
+ADHOC
