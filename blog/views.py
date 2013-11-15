@@ -18,7 +18,7 @@ class PostIndex(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return Post.objects.filter(published=True).filter(timestamp__lte=datetime.now)
+        return Post.objects.filter(published=True).filter(timestamp__lte=datetime.now())
 
 class PostDetail(DetailView):
     model = Post
@@ -42,7 +42,7 @@ class ImageList(ListView):
 
 class PostsByTag(PostIndex):
     def get_queryset(self):
-        return Post.objects.filter(tags__slug__in=[self.kwargs['tag']]).filter(published=True).filter(timestamp__lte=datetime.now)
+        return Post.objects.filter(tags__slug__in=[self.kwargs['tag']]).filter(published=True).filter(timestamp__lte=datetime.now())
 
     def get_context_data(self, **kwargs):
         context = super(PostsByTag, self).get_context_data(**kwargs)
@@ -64,15 +64,15 @@ class HomeView(PostIndex):
             post_ids.append(f.post_id)
 
         context['features'] = features
-        context['recent_breaking'] = Post.objects.filter(tags__name__in=['breaking']).filter(published=True).filter(timestamp__lte=datetime.now).exclude(id__in=post_ids)[:5]
-        context['recent_features'] = Post.objects.filter(tags__name__in=['features']).filter(published=True).filter(timestamp__lte=datetime.now).exclude(id__in=post_ids)[:5]
-        context['recent_favorites'] = Post.objects.filter(tags__name__in=['favorites']).filter(published=True).filter(timestamp__lte=datetime.now).exclude(id__in=post_ids)[:5]
+        context['recent_breaking'] = Post.objects.filter(tags__name__in=['breaking']).filter(published=True).filter(timestamp__lte=datetime.now()).exclude(id__in=post_ids)[:5]
+        context['recent_features'] = Post.objects.filter(tags__name__in=['features']).filter(published=True).filter(timestamp__lte=datetime.now()).exclude(id__in=post_ids)[:5]
+        context['recent_favorites'] = Post.objects.filter(tags__name__in=['favorites']).filter(published=True).filter(timestamp__lte=datetime.now()).exclude(id__in=post_ids)[:5]
         return context
 
 class PostsByAuthor(PostIndex):
     def get_queryset(self):
         self.author = get_object_or_404(User, pk=self.kwargs['user_id'])
-        return Post.objects.filter(author=self.author).filter(published=True).filter(timestamp__lte=datetime.now).order_by('-timestamp')
+        return Post.objects.filter(author=self.author).filter(published=True).filter(timestamp__lte=datetime.now()).order_by('-timestamp')
 
     def get_context_data(self, **kwargs):
         context = super(PostsByAuthor, self).get_context_data(**kwargs)
@@ -86,7 +86,7 @@ class AllEntriesFeed(Feed):
     description_template = "blog/feed_entry.html"
 
     def items(self):
-        return Post.objects.filter(published=True).filter(timestamp__lte=datetime.now).order_by('-timestamp')[:10]
+        return Post.objects.filter(published=True).filter(timestamp__lte=datetime.now()).order_by('-timestamp')[:10]
 
     def item_title(self, item):
         return item.title
