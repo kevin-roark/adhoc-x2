@@ -35,7 +35,7 @@ class PostPreview(DetailView):
 class FriendList(ListView):
     model = Link
     def get_queryset(self):
-        return Link.objects.filter(contributor=False)
+        return Link.objects.all()
 
 class ImageList(ListView):
     model = Image

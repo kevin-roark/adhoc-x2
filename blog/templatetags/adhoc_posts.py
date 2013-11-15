@@ -43,7 +43,7 @@ def most_liked():
 
 @register.simple_tag
 def blogroll():
-    links = Link.objects.filter(contributor=True)
+    links = Link.objects.all()
 
     if links:
         html = '<ul class="unstyled">'
@@ -51,7 +51,6 @@ def blogroll():
         for l in links:
             html += '<li><a href="%s">%s</a></li>' % (l.url, l.name)
 
-        html += '<li><h4><a href="/friends/" class="more">Friends of AdHoc</a></h4></li>'
         html += '</ul>'
         return html
     else:
