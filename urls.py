@@ -1,9 +1,13 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
+from haystack.query import SearchQuerySet
+from haystack.views import SearchView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+sqs = SearchQuerySet().order_by('-timestamp')
 
 urlpatterns = patterns(
     '',
@@ -18,7 +22,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
 
     (r'^music/', include('music.urls')),
-    (r'^search/', include('haystack.urls')),
+    (r'^search/', SearchView(searchqueryset=sqs)),
     (r'^ads/', include('advertising.urls')),
     (r'^', include('blog.urls')),
 )
