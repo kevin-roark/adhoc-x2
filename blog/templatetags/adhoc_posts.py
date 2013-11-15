@@ -49,7 +49,7 @@ def blogroll():
         html = '<ul class="unstyled">'
 
         for l in links:
-            html += '<li><a href="%s">%s</a></li>' % (l.url, l.name)
+            html += '<li><a target="_blank" class=".sidebar-link" href="%s">%s</a></li>' % (l.url, l.name)
 
         html += '</ul>'
         return html
