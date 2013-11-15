@@ -7,7 +7,7 @@
 {% with result.object as object %}
 <article>
   {% include "blog/post_top.html" %}
-  {% if object|read_more %}<a href="{{ object.get_absolute_url }}" class="read_more">Read More</a>{% endif %}
+  {% if object.read_more %}<a href="{{ object.get_absolute_url }}" class="read_more">Read More</a>{% endif %}
 </article>
 {% endwith %}
 {% empty %}

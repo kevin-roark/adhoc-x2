@@ -3,10 +3,10 @@ import sys
 import site
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
-os.environ['PYTHON_EGG_CACHE'] = '/home/udbhav/www/django/.python_eggs'
+os.environ['PYTHON_EGG_CACHE'] = '/var/.python_eggs'
 
-site.addsitedir('/home/udbhav/adhoc-env/lib/python2.6/site-packages')
-sys.path.append('/home/udbhav/www/django/adhoc')
+#site.addsitedir('/home/udbhav/adhoc-env/lib/python2.6/site-packages')
+sys.path.append('/var/adhoc')
 
 import django.core.handlers.wsgi
 _application = django.core.handlers.wsgi.WSGIHandler()
