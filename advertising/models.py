@@ -5,7 +5,9 @@ class Advertisement(models.Model):
         ('1', '728 Leaderboard'),
         ('2', 'Sidebar Ad 1'),
         ('3', 'Sidebar Ad 2'),
-        )
+        ('4', 'Sidebar Ad 3'),
+        ('5', 'Sidebar Ad 4')
+    )
 
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='ads', blank=True, null=True)
