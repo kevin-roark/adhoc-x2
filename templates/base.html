@@ -48,6 +48,7 @@
             <li{% if current_nav == 'breaking' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='breaking' %}">Breaking</a></li>
             <li{% if current_nav == 'favorites' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='favorites' %}">Favorites</a></li>
             <li{% if current_nav == 'features' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='features' %}">Features</a></li>
+            <li{% if flatpage.title == 'Events' %} class="active"{% endif %}><a href="/events/">Events</a></li>
             <li{% if flatpage.title == 'About' %} class="active"{% endif %}><a href="/about/">About</a></li>
           </ul>
         </nav>
@@ -63,7 +64,7 @@
           </div>
           <div class="row">
             <div class="span12">
-              <footer>&copy; Ad Hoc 2013</footer>
+              <footer>&copy; Ad Hoc 2012 - 2014</footer>
             </div>
           </div>
         </div>
