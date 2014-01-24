@@ -1,5 +1,28 @@
 from django.contrib import admin
+from django import forms
 
 from advertising.models import *
 
-admin.site.register(Advertisement)
+class CustomAdForm(forms.modelForm):
+    active = forms.BooleanField() # make this manually there
+
+    class Meta:
+        model = Advertisement
+        fields = (
+            'title',
+            'image',
+            'url',
+            'code',
+            'position',
+            'start_date',
+            'end_date',
+            'paid',
+            'paid_views',
+            'views'
+        )
+
+class AdAdmin(admin.ModelAdmin):
+    form = CustomAdForm
+    readonly_fields = ('views')
+
+admin.site.register(Advertisement, AdAdmin)

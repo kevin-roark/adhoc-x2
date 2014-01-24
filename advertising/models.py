@@ -15,7 +15,7 @@ class Advertisement(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     paid = models.BooleanField()
-    active = models.BooleanField(editable=True, default=True)
+    active = models.BooleanField(default=True)
     paid_views = models.IntegerField(blank=True, default=0)
     views = models.IntegerField(editable=False, default=0)
 
