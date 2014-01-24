@@ -4,7 +4,9 @@ $(document).ready(function() {
     console.log('got response from ads request');
     for (i=0;i<data.length;i++) {
       $("#ad_slot_" + data[i]['slot']).html(data[i]['code']).addClass("inserted");
-      console.log('added ad ' + i);
+      console.log(data[i]['code']);
+      console.log($("#ad_slot_" + data[i]['slot']));
+      console.log('added ad ' + (i+1));
     }
   });
 
