@@ -17,7 +17,7 @@ class Advertisement(models.Model):
     paid = models.BooleanField()
     active = models.BooleanField(default=True)
     paid_views = models.IntegerField(blank=True, default=0)
-    views = models.IntegerField(editable=False, default=0)
+    views = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.title

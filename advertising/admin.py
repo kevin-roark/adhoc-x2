@@ -3,7 +3,7 @@ from django import forms
 
 from advertising.models import *
 
-class CustomAdForm(forms.modelForm):
+class CustomAdForm(forms.ModelForm):
     active = forms.BooleanField() # make this manually there
 
     class Meta:
@@ -22,7 +22,7 @@ class CustomAdForm(forms.modelForm):
         )
 
 class AdAdmin(admin.ModelAdmin):
-    form = CustomAdForm
-    readonly_fields = ('views')
+    #form = CustomAdForm
+    readonly_fields = ('views',)
 
 admin.site.register(Advertisement, AdAdmin)
