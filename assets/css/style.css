@@ -463,3 +463,126 @@ footer {
     margin-bottom: 10px;
     display: block;
 }
+
+/* facebook thing */
+.facebook-article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    border: 3px solid white;
+    color: black;
+}
+    .facebook-article .fb-like {
+        right: 0px;
+        top: 25px;
+        position: absolute;
+    }
+
+    .facebook-close {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 18px;
+      color: #000;
+      text-shadow: 0 1px 0 #ffffff;
+      opacity: 0.4;
+      filter: alpha(opacity=20);
+      text-decoration: none;
+
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+        .facebook-close:hover {
+          color: #000000;
+          text-decoration: none;
+          opacity: 0.8;
+          filter: alpha(opacity=40);
+          cursor: pointer;
+        }
+
+#facebook-modal {
+    width: 450px;
+}
+
+    #facebook-modal .modal-header {
+        text-align: center;
+    }
+
+    #facebook-modal .modal-body {
+        text-align: center;
+    }
+    
+    #facebook-modal .modal-footer {
+        height: 0px;
+        background-color: #fff;
+        line-height: 0px;
+        padding: 0;
+        margin: 0;
+    }
+
+        #facebook-modal .modal-footer button {
+            margin: 5px;
+        }
+
+        #facebook-modal-close {
+            color: red;
+        }
+
+/* events stuff */
+.event-box {
+    background-color: #fff;
+    color: #000;
+    padding: 0.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .event-box hr {
+        padding: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 0;
+        border-top: 1px solid #888;
+        height: 1px;
+    }
+
+    .event-box-link:hover, .event-box-link:focus {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .event-box a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .event-box a:hover, .event-title a:focus {
+        color: #fff;
+    }
+
+    .event-title {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 500;
+        padding-bottom: 4px;
+    }
+
+    .event-venue {
+        text-align: right;
+        font-size: 1.1em;
+    }
+
+    .event-time {
+        text-align: right;
+        font-size: 0.9em;
+    }
+
+    .event-details {
+
+    }
+
+    .event-image {
+
+    }

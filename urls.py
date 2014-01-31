@@ -24,6 +24,7 @@ urlpatterns = patterns(
     (r'^music/', include('music.urls')),
     (r'^search/', SearchView(searchqueryset=sqs)),
     (r'^ads/', include('advertising.urls')),
+    (r'^events/', include('adhoc_calendar.urls')),
     (r'^', include('blog.urls')),
 )
 

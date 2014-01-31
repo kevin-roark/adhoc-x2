@@ -63,6 +63,21 @@
 <h1 class="subtitle">{{ title }}</h1>
 {% endif %}
 
+<div id="posts-list">   
+  <!-- Modal for faceblog -->
+  <div id="facebook-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="fb-modal-label" aria-hidden="true">
+    <div class="modal-header">
+      <a class="facebook-close" data-dismiss="modal" aria-hidden="true">×</a>
+      <h3 id="fb-modal-label">Like (or share) us on facebook! Please!!!!</h3>
+    </div>
+    <div class="modal-body">
+        <div class="fb-like" data-href="http://www.facebook.com/adhocfm" data-width="300" colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" id="facebook-modal-close" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
 {% for object in object_list %}
 <article>
   {% include "blog/post_top.html" %}
@@ -74,8 +89,9 @@
 </div>
 </article>
 {% empty %}
-<article><h3>Sorry no posts matched.</h3></article>
+<article><h3>Sorry, no posts matched.</h3></article>
 {% endfor %}
+</div>
 
 
 <ul class="pager">
@@ -90,4 +106,49 @@
   </li>
   {% endif %}
 </ul>
+{% endblock %}
+
+{% block javascript %}
+  <script type='text/javascript'>
+    $(document).ready(function() {
+
+      var facebook_plea_percentage = Math.random();
+      if (facebook_plea_percentage <= 0.2) {
+        $('#facebook-modal').modal({
+          'show': true
+        });
+      }
+
+      var facebook_flash_percentage = Math.random();
+      if (facebook_flash_percentage <= 0.33) {
+        var post_list = $('#posts-list');
+        var article = '<div class="facebook-article" id="main-facebook-article">Please like us on facebook!!!' +
+                      '<a class="facebook-close" id="main-facebook-closer">×</a>' +
+                      '<div class="fb-like" data-href="http://www.facebook.com/adhocfm" data-width="300" colorscheme="light" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>' +
+                      '</div>';
+        post_list.prepend(article);
+
+        var main_facebook = $('#main-facebook-article');
+        $('#main-facebook-closer').click(function() {
+          main_facebook.remove();
+          clearInterval(borderChanger);
+        });
+
+        function random_color() {
+          return 'rgb(' + Math.floor(Math.random() * 150) + ', ' + Math.floor(Math.random() * 150) + ', ' + Math.floor(Math.random() * 150) + ')'
+        }
+
+        var has_border = false;
+        var borderChanger = setInterval(function() {
+          if (has_border) {
+            main_facebook.css('border', '3px solid white');
+          }
+          else {
+            main_facebook.css('border', '3px dashed ' + random_color());
+          }
+          has_border = !has_border;
+        }, 350);
+      }
+    });
+  </script>
 {% endblock %}
