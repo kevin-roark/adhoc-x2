@@ -29,6 +29,7 @@ class Event(models.Model):
     details = models.TextField(blank=True)
     venue = models.CharField(max_length=255)
     url = models.URLField(blank=True, null=True)
+    link_name = models.CharField(max_length=140)
     image = models.ForeignKey(EventImage, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     start_time = models.DateTimeField()

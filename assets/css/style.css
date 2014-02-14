@@ -566,9 +566,9 @@ footer {
     }
 
     .event-title {
-        padding-left: 25px;
+        padding-left: 28px;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 500;
         padding-bottom: 4px;
     }
@@ -612,12 +612,12 @@ footer {
         font-size: 0.9em;
     }
 
-    .event-details {
-
+    .event-description {
+        white-space: pre-line;
     }
 
     .event-image {
-        white-space: pre-wrap;
+
     }
 
         .event-image-caption {

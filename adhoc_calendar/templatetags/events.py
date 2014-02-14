@@ -35,8 +35,8 @@ def event_box(event):
     where = '<div class="event-venue">@ ' + event.venue + '</div>'
     all_html.append(where)
 
-    if (event.url):
-        link = '<div class="event-url">' + event.url + '</div>'
+    if (event.link_name):
+        link = '<div class="event-url">' + event.link_name + '</div>'
         all_html.append(link);
 
     if (event.details or event.image):
