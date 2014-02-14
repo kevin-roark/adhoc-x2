@@ -48,22 +48,13 @@
             <li{% if current_nav == 'breaking' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='breaking' %}">Breaking</a></li>
             <li{% if current_nav == 'favorites' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='favorites' %}">Favorites</a></li>
             <li{% if current_nav == 'features' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='features' %}">Features</a></li>
-            <!-- <li{% if flatpage.title == 'Events' %} class="active"{% endif %}><a href="/Events/">Events</a></li> -->
+            <li{% if current_nav == 'events' %} class="active"{% endif %}><a href="/events/">Events</a></li>
             <li{% if flatpage.title == 'About' %} class="active"{% endif %}><a href="/about/">About</a></li>
           </ul>
         </nav>
         {% block features %}{% endblock %}
         <div class="content">
-          {% block content_rows %}
-            <div class="row">
-              <div class="span8">
-                {% block content %}{% endblock content %}
-              </div>
-              <div class="span4">
-                {% block sidebar %}{% include "blog/sidebar.html" %}{% endblock sidebar %}
-              </div>
-            </div>
-          {% endblock content_rows %}
+          {% block content_rows %}{% endblock %}
           <div class="row">
             <div class="span12">
               <footer>&copy; Ad Hoc 2012 - 2014</footer>
@@ -79,7 +70,6 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/audio.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/json.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/django-csrf.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/ads.js"></script>
     {% block earlyjs %}{% endblock %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -118,6 +108,6 @@
       })();
     </script>
 
-    {% block javascript %}{% endblock javascript %}
+    {% block javascript %}{% endblock %}
   </body>
 </html>

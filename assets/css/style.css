@@ -533,10 +533,12 @@ footer {
 /* events stuff */
 .event-box {
     background-color: #fff;
+    position: relative;
     color: #000;
     padding: 0.5em;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: 1px solid black;
 }
 
     .event-box hr {
@@ -549,8 +551,7 @@ footer {
     }
 
     .event-box-link:hover, .event-box-link:focus {
-        background-color: #000;
-        color: #fff;
+        background-color: #ddd;
     }
 
     .event-box a {
@@ -558,16 +559,42 @@ footer {
         text-decoration: none;
     }
 
-    .event-box a:hover, .event-title a:focus {
-        color: #fff;
+    .adhoc-event-label {
+        font-size: 0.8em;
+        color: #E60000;
+        text-align: center;
     }
 
     .event-title {
+        padding-left: 25px;
         text-align: center;
         font-size: 1.5em;
         font-weight: 500;
         padding-bottom: 4px;
     }
+
+    .event-date-badge {
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        padding-bottom: 2px;
+        font-size: 0.9em;
+        text-align: center;
+        width: 35px;
+        color: #fff;
+        background-color: #24476B;
+    }
+
+        .event-date-badge hr {
+            padding: 0;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 3px;
+            margin-right: 3px;
+            border: 0;
+            border-top: 1px solid #ddd;
+            height: 1px;
+        }
 
     .event-venue {
         text-align: right;
@@ -579,10 +606,22 @@ footer {
         font-size: 0.9em;
     }
 
+    .event-url {
+        text-align: right;
+        color: #3254a5;
+        font-size: 0.9em;
+    }
+
     .event-details {
 
     }
 
     .event-image {
-
+        white-space: pre-wrap;
     }
+
+        .event-image-caption {
+            font-style: italic;
+            text-align: center;
+            font-size: 0.8em;
+        }

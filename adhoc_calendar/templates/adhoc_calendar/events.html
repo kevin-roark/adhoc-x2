@@ -27,4 +27,8 @@
       {% endfor %}
     </div>
   </div>
+
+  {% if not events %}
+    <h1 style="text-align: center; padding: 1em; background: white;">No events to show just yet.</h1>
+  {% endif %}
 {% endblock %}
