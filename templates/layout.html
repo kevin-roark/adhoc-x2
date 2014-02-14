@@ -48,7 +48,7 @@
             <li{% if current_nav == 'breaking' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='breaking' %}">Breaking</a></li>
             <li{% if current_nav == 'favorites' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='favorites' %}">Favorites</a></li>
             <li{% if current_nav == 'features' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='features' %}">Features</a></li>
-            <li{% if flatpage.title == 'Events' %} class="active"{% endif %}><a href="/events/">Events</a></li>
+            <!-- <li{% if flatpage.title == 'Events' %} class="active"{% endif %}><a href="/Events/">Events</a></li> -->
             <li{% if flatpage.title == 'About' %} class="active"{% endif %}><a href="/about/">About</a></li>
           </ul>
         </nav>
@@ -80,6 +80,7 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/json.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/django-csrf.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/ads.js"></script>
+    {% block earlyjs %}{% endblock %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-28627438-1']);
