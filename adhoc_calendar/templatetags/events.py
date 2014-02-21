@@ -30,15 +30,6 @@ def event_box(event):
     title = '<div class="event-title">' + event.title + '</div>'
     all_html.append(title)
 
-    if (event.image):
-        image = '<div class="event-image"><a target="_blank" href="' + event.image.default_image.url + '">' + \
-                '<img src="' + event.image.default_image.url + '" alt="' + event.image.title + '"></a>'
-        if (event.image.caption):
-          image += '<div class="event-image-caption">' + event.image.caption + '</div>'
-        image += '</div>'
-        all_html.append(image)
-        all_html.append('</div>') # end header now
-
     where = '<div class="event-venue">' + event.venue + '</div>'
     all_html.append(where)
 
@@ -62,9 +53,15 @@ def event_box(event):
         all_html.append(link);
 
     all_html.append('</div>') # for event-time
+    all_html.append('</div>'); # for event-header
 
-    if not event.image:
-        all_html.append('</div>'); # for event-header
+    if (event.image):
+        image = '<div class="event-image"><a target="_blank" href="' + event.image.default_image.url + '">' + \
+                '<img src="' + event.image.default_image.url + '" alt="' + event.image.title + '"></a>'
+        if (event.image.caption):
+          image += '<div class="event-image-caption">' + event.image.caption + '</div>'
+        image += '</div>'
+        all_html.append(image)
 
     if (event.details):
         all_html.append('<hr>')

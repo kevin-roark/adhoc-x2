@@ -627,6 +627,7 @@ footer {
 
     .event-image {
         text-align: center;
+        margin-top: 5px;
     }
     .event-image img {
         max-height: 150px;
