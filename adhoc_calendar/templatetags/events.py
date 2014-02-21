@@ -22,13 +22,22 @@ def event_box(event):
     month = event.start_time.strftime('%b');
     dow = event.start_time.strftime('%a');
     day = event.start_time.strftime('%d');
-    badge = '<div class="event-date-badge">' + dow + '<hr>' + month + ' ' + day + '</div>'
+    badge = '<div class="event-date-badge">' + dow + '<br>' + month + ' ' + day + '</div>'
     all_html.append(badge);
 
     all_html.append('<div class="event-header">')
 
     title = '<div class="event-title">' + event.title + '</div>'
     all_html.append(title)
+
+    if (event.image):
+        image = '<div class="event-image"><a target="_blank" href="' + event.image.default_image.url + '">' + \
+                '<img src="' + event.image.default_image.url + '" alt="' + event.image.title + '"></a>'
+        if (event.image.caption):
+          image += '<div class="event-image-caption">' + event.image.caption + '</div>'
+        image += '</div>'
+        all_html.append(image)
+        all_html.append('</div>') # end header now
 
     where = '<div class="event-venue">' + event.venue + '</div>'
     all_html.append(where)
@@ -54,18 +63,11 @@ def event_box(event):
 
     all_html.append('</div>') # for event-time
 
-    all_html.append('</div>'); # for event-header
+    if not event.image:
+        all_html.append('</div>'); # for event-header
 
     if (event.details or event.image):
         all_html.append('<hr>')
-
-    if (event.image):
-        image = '<div class="event-image"><a target="_blank" href="' + event.image.default_image.url + '">' + \
-                '<img src="' + event.image.default_image.url + '" alt="' + event.image.title + '"></a>'
-        if (event.image.caption):
-          image += '<div class="event-image-caption">' + event.image.caption + '</div>'
-        image += '</div>'
-        all_html.append(image)
 
     if (event.details):
         details = '<div class="event-description">' + event.details + '</div>'
