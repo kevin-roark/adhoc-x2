@@ -66,7 +66,7 @@ def event_box(event):
     if not event.image:
         all_html.append('</div>'); # for event-header
 
-    if (event.details or event.image):
+    if (event.details):
         all_html.append('<hr>')
 
     if (event.details):
