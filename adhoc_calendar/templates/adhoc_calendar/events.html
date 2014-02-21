@@ -5,6 +5,20 @@
 
 {% block content_rows %}
   <div class="row">
+    <div class="span6 offset3">
+      <div class="event-list-signup-container">
+        <div class="join-event-list-header">Join our events mailing list: </div>
+        <form action="http://adhoc.us5.list-manage.com/subscribe/post?u=bac56a8a56c832c80787b6ddd&amp;id=28e25f4c0b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline event-signup-form" target="_blank">
+          <fieldset>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="event-signup-button">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="span4"> 
       {% for event in events %}
         {% if forloop.counter0|divisibleby:3 %}
