@@ -38,7 +38,7 @@ def event_box(event):
 
     when = '<div class="event-time">' + format_time(event.start_time)
     if (event.end_time):
-        when += ' - ' + format_time(evet.end_time)
+        when += ' - ' + format_time(event.end_time)
     all_html.append(when)
 
     if (event.url1):
