@@ -35,8 +35,9 @@ class Event(models.Model):
     link_name2 = models.CharField(blank=True, null=True, max_length=140,)
     image = models.ForeignKey(EventImage, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField(blank=True, null=True)
+    date = models.DateField()
+    start = models.TimeField(blank=True, null=True)
+    end = models.TimeField(blank=True, null=True)
 
     def __unicode__(self):
-        return self.title + ' - ' + str(self.start_time)
+        return self.title + ' - ' + str(self.date)

@@ -19,7 +19,7 @@ def render_short(request, template, data):
 def upcoming_events(request):
     """ all future events """
     yesterday = datetime.now() - timedelta(days=1) # pretend its yesterday to show all of "tonight's" events
-    events = Event.objects.filter(start_time__gte=yesterday).order_by('start_time')
+    events = Event.objects.filter(date__gte=yesterday).order_by('date')
     context = {'events': events, 'current_nav': 'events'}
     return render_short(request, 'adhoc_calendar/events.html', context)
 
@@ -27,5 +27,5 @@ def events_in_month(request, year, month):
     """ Year in 'xxxx' format and month in 'yy' format """
     month = datetime(year=year, month=month, day=1)
     next_month = month + timedelta(months=1)
-    month_events = Event.objects.filter(start_time__gte=month, start_time__lte=next_month).order_by('start_time')
+    month_events = Event.objects.filter(date__gte=month, date__lte=next_month).order_by('date')
     return render_short(request, 'adhoc_calendar/events.html', context)

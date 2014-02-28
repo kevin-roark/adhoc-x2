@@ -606,10 +606,13 @@ footer {
     .event-time {
         font-size: 0.9em;
     }
+    
+    .event-timer {
+      padding-right: 5px;
+    }
 
     .event-linker {
         font-size: 0.9em;
-        padding: 0px 5px;
     }
         .event-linker a {
             text-decoration: none;

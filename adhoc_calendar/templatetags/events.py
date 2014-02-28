@@ -7,10 +7,12 @@ from adhoc_calendar.models import *
 register = template.Library()
 
 def format_time(tim):
-    hour = str(tim.hour % 12)
+    if (tim.hour % 12) != 0:
+        hour = str(tim.hour % 12)
+    else:
+        hour = '12'
     minutes = tim.strftime('%M %p').lower()
     return hour + ':' + minutes
-
 
 @register.simple_tag
 def event_box(event):
@@ -19,9 +21,9 @@ def event_box(event):
     open_html = '<div class="event-box">'
     all_html.append(open_html)
 
-    month = event.start_time.strftime('%b');
-    dow = event.start_time.strftime('%a');
-    day = event.start_time.strftime('%d');
+    month = event.date.strftime('%b');
+    dow = event.date.strftime('%a');
+    day = event.date.strftime('%d');
     badge = '<div class="event-date-badge">' + dow + '<br>' + month + ' ' + day + '</div>'
     all_html.append(badge);
 
@@ -36,23 +38,28 @@ def event_box(event):
     addr = '<div class="event-address">' + event.address + '</div>'
     all_html.append(addr);
 
-    when = '<div class="event-time">' + format_time(event.start_time)
-    if (event.end_time):
-        when += ' - ' + format_time(event.end_time)
-    all_html.append(when)
+    time_div = '<div class="event-time">'
+    if (event.start):
+        time_div += '<span class="event-timer">'
+        time_div += format_time(event.start)
+        if (event.end):
+            time_div += ' - ' + format_time(event.end)
+        time_div += '</span>'
 
     if (event.url1):
         link = ' <span class="event-linker"><a target="_blank" href="' + event.url1 + '">' + event.link_name1 + '</a></span>'
-        all_html.append(link);
+        time_div += link
 
     if (event.url2):
         link = ''
         if (event.url1):
             link += ' | '
         link += ' <span class="event-linker"><a target="_blank" href="' + event.url2 + '">' + event.link_name2 + '</a></span>'
-        all_html.append(link);
+        time_div += link
 
-    all_html.append('</div>') # for event-time
+    time_div += '</div>'
+    all_html.append(time_div)
+
     all_html.append('</div>'); # for event-header
 
     if (event.image):
