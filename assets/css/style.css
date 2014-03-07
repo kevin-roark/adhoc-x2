@@ -282,7 +282,7 @@ article h1 a {
     color: #333;
 }
     article h1 a:hover, article h1 a:focus {
-        color: rgb(150, 150, 160);
+        color: rgb(120, 120, 130);
         text-decoration: none;
     }
 
