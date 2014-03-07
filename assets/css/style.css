@@ -281,6 +281,10 @@ article p {
 article h1 a {
     color: #333;
 }
+    article h1 a:hover, article h1 a:focus {
+        color: rgb(150, 150, 160);
+        text-decoration: none;
+    }
 
 .header_image, .embed {
     margin-bottom: 20px;
