@@ -19,7 +19,7 @@ def render_short(request, template, data):
 def upcoming_events(request):
     """ all future events """
     yesterday = datetime.now() - timedelta(days=1) # pretend its yesterday to show all of "tonight's" events
-    events = Event.objects.filter(date__gte=yesterday).order_by('date')
+    events = Event.objects.filter(date__gte=yesterday).order_by('date', 'start')
     context = {'events': events, 'current_nav': 'events'}
     return render_short(request, 'adhoc_calendar/events.html', context)
 
