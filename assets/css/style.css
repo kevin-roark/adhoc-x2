@@ -128,13 +128,48 @@ nav a {
     font-size: 26px;
 }
 
-nav a:hover {
-    text-decoration: none;
-}
-
 nav li.active a {
     color: #08C;
 }
+
+  nav a:hover, nav a:focus {
+    text-decoration: none;
+  }
+
+  nav .breaking-link:hover, nav .breaking-link:focus {
+    color: #0B3CA8; /* dark blue */
+  }
+  nav li.active .breaking-link {
+    color: #0070F0; /* light blue */
+  }
+
+  nav .favorites-link:hover, nav .favorites-link:focus {
+    color: #660AA3; /* dark purple */
+  }
+  nav li.active .favorites-link {
+    color: #8214FF; /* light purple */
+  }
+
+  nav .features-link:hover, nav .features-link:focus {
+    color: #2E8A6A; /* dark green */
+  }
+  nav li.active .features-link {
+    color: #00CC74; /* light green */
+  }
+
+  nav .events-link:hover, nav .events-link:focus {
+    color: #AA0957; /* dark red */
+  }
+  nav li.active .events-link {
+    color: #F50083; /* light red */
+  }
+
+  nav .about-link:hover, nav .about-link:focus {
+    color: #DC5004; /* dark orange */
+  }
+  nav li.active .about-link {
+    color: #FF4538; /* light orange */
+  }
 
 #features_container {
     background: url(../images/more_stories_bg.png);
@@ -182,7 +217,7 @@ nav li.active a {
     overflow: hidden;
     display: block;
 }
-    
+
 #features img {
     display: block;
     overflow: hidden;
@@ -517,7 +552,7 @@ footer {
     #facebook-modal .modal-body {
         text-align: center;
     }
-    
+
     #facebook-modal .modal-footer {
         height: 0px;
         background-color: #fff;
@@ -610,7 +645,7 @@ footer {
     .event-time {
         font-size: 0.9em;
     }
-    
+
     .event-timer {
       padding-right: 5px;
     }

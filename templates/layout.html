@@ -45,11 +45,21 @@
         </header>
         <nav>
           <ul class="unstyled">
-            <li{% if current_nav == 'breaking' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='breaking' %}">Breaking</a></li>
-            <li{% if current_nav == 'favorites' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='favorites' %}">Favorites</a></li>
-            <li{% if current_nav == 'features' %} class="active"{% endif %}><a href="{% url posts_by_tag tag='features' %}">Features</a></li>
-            <li{% if current_nav == 'events' %} class="active"{% endif %}><a href="/events/">Events</a></li>
-            <li{% if flatpage.title == 'About' %} class="active"{% endif %}><a href="/about/">About</a></li>
+            <li{% if current_nav == 'breaking' %} class="active"{% endif %}>
+              <a class="breaking-link" href="{% url posts_by_tag tag='breaking' %}">Breaking</a>
+            </li>
+            <li{% if current_nav == 'favorites' %} class="active"{% endif %}>
+              <a class="favorites-link" href="{% url posts_by_tag tag='favorites' %}">Favorites</a>
+            </li>
+            <li{% if current_nav == 'features' %} class="active"{% endif %}>
+              <a class="features-link" href="{% url posts_by_tag tag='features' %}">Features</a>
+            </li>
+            <li{% if current_nav == 'events' %} class="active"{% endif %}>
+              <a class="events-link" href="/events/">Events</a>
+            </li>
+            <li{% if flatpage.title == 'About' %} class="active"{% endif %}>
+              <a class="about-link" href="/about/">About</a>
+            </li>
           </ul>
         </nav>
         {% block features %}{% endblock %}
