@@ -299,27 +299,46 @@ nav li.active a {
     margin-right: 0;
 }
 
+/* posts by, posts tagged */
 .subtitle {
     margin-bottom: 30px;
     color: #eaeaea
 }
+
 article, .post_extras {
     padding: 20px;
     background: white;
     margin-bottom: 20px;
 }
 
+article header {
+    margin-bottom: 15px;
+}
+
 article p {
     line-height: 26px;
 }
 
+article h1 {
+    line-height: 28px;
+}
+
+/* article title */
 article h1 a {
     color: #333;
 }
     article h1 a:hover, article h1 a:focus {
-        color: rgb(120, 120, 130);
+        color: rgb(100, 100, 110);
         text-decoration: none;
     }
+
+article .author-name {
+    text-decoration: none;
+    color: #135EFF;
+}
+  article .author-name:hover, article .author-name:focus {
+      color: #0953C3;
+  }
 
 .header_image, .embed {
     margin-bottom: 20px;
@@ -330,14 +349,6 @@ article h1 a {
     font-size: 14px;
     font-style: italic;
     text-align: right;
-}
-
-article header {
-    margin-bottom: 15px;
-}
-
-article h1 {
-    line-height: 28px;
 }
 
 article .byline {
