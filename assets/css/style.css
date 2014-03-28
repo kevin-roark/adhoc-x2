@@ -301,8 +301,11 @@ nav li.active a {
 
 /* posts by, posts tagged */
 .subtitle {
-    margin-bottom: 30px;
-    color: #eaeaea
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    color: #eaeaea;
+    border-bottom: 1px solid white;
+    letter-spacing: 1px;
 }
 
 article, .post_extras {
