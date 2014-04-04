@@ -44,6 +44,10 @@ body, p, article {
     height: 205px;
 }
 
+  #logo a:hover, #logo a:focus {
+    background: url(../images/logo_gray.png);
+  }
+
 #header .ad {
     float: right;
     margin-top: 109px;
