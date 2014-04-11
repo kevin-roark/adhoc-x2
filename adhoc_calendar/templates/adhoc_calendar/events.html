@@ -66,14 +66,20 @@
   , '#5A3BC9' // purp
   , '#59CFC5' // teal
   ];
+  shuffle(badgeColors);
+
 
   $('.event-date-badge').each(function(idx) {
     var mod = idx % badgeColors.length;
-    if (mod == 0)
-      shuffle(badgeColors);
-
     $(this).css('background-color', badgeColors[mod]);
   });
+
+  $('.event-image img').each(function(idx) {
+    var mod = idx % badgeColors.length;
+    $(this).css('border', '2px solid ' + badgeColors[mod]);
+  });
+
+
 </script>
-}
+
 {% endblock %}
