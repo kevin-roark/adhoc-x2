@@ -19,21 +19,21 @@
   </div>
 
   <div class="row">
-    <div class="span4"> 
+    <div class="span4">
       {% for event in events %}
         {% if forloop.counter0|divisibleby:3 %}
           {% event_box event %}
         {% endif %}
       {% endfor %}
     </div>
-    <div class="span4"> 
+    <div class="span4">
       {% for event in events %}
         {% if forloop.counter0|add:"-1"|divisibleby:3 %}
           {% event_box event %}
         {% endif %}
       {% endfor %}
     </div>
-    <div class="span4"> 
+    <div class="span4">
       {% for event in events %}
         {% if forloop.counter0|add:"-2"|divisibleby:3 %}
           {% event_box event %}
@@ -45,4 +45,35 @@
   {% if not events %}
     <h1 style="text-align: center; padding: 1em; background: white;">No events to show just yet.</h1>
   {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+  function choice(arr) {
+    var i = Math.floor(Math.random() * arr.length);
+    return arr[i];
+  }
+
+  function shuffle(arr) {
+    arr.sort(function() { return 0.5 - Math.random() });
+  }
+
+  var badgeColors = [
+    '#D55E58' // pink
+  , '#285ED2' // blu
+  , '#34AD46' // green
+  , '#F5BB19' // gold
+  , '#5A3BC9' // purp
+  , '#59CFC5' // teal
+  ];
+
+  $('.event-date-badge').each(function(idx) {
+    var mod = idx % badgeColors.length;
+    if (mod == 0)
+      shuffle(badgeColors);
+
+    $(this).css('background-color', badgeColors[mod]);
+  });
+</script>
+}
 {% endblock %}
