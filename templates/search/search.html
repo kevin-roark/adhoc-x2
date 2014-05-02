@@ -19,12 +19,12 @@
 <ul class="pager">
   {% if page.has_previous %}
   <li class="previous">
-  <a href="?page={{ page.previous_page_number }}">&larr; Newer</a>
+  <a href="?page={{ page.previous_page_number }}&q={{ query }}">&larr; Newer</a>
   {% endif %}
 
   {% if page.has_next %}
   <li class="next">
-  <a href="?page={{ page.next_page_number }}">Older &rarr;</a>
+  <a href="?page={{ page.next_page_number }}&q={{ query }}">Older &rarr;</a>
   </li>
   {% endif %}
 </ul>
