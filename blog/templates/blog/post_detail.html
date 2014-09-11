@@ -3,6 +3,13 @@
 
 {% block page_title %}{{ object.title }}{% endblock %}
 
+{% block meta_description %}
+  <meta property="og:title" content="{{ object.title }}" />
+  <meta property="og:image" content="{{ object.header_image.medium_image.url }}" />
+  <meta property="og:url" content="{{ object.get_permalink }}" />
+  <meta property="og:description" content="{{ object.body }}" />
+{% endblock %}
+
 {% block content %}
 <article>
   {% include "blog/post_top.html" %}

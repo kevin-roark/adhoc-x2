@@ -11,7 +11,15 @@
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico?v=6"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url rss_feed %}" />
     {% block css %}{% endblock css %}
-    {% block meta_description %}{% endblock meta_description %}
+
+    <meta prefix="fb: http://ogp.me/ns/fb#" property="fb:app_id" content="130074127082614">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AdHoc.fm" />
+    {% block meta_description %}
+      <meta property="og:title" content="AdHoc" />
+      <meta property="og:image" content="http://adhoc.fm/static/images/logo.png" />
+      <meta property="og:url" content="http://adhoc.fm/" />
+    {% endblock meta_description %}
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   </head>
 
