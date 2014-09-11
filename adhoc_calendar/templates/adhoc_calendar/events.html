@@ -62,29 +62,6 @@
   function shuffle(arr) {
     arr.sort(function() { return 0.5 - Math.random() });
   }
-
-  var badgeColors = [
-    '#D55E58' // pink
-  , '#285ED2' // blu
-  , '#34AD46' // green
-  , '#F5BB19' // gold
-  , '#5A3BC9' // purp
-  , '#59CFC5' // teal
-  ];
-  shuffle(badgeColors);
-
-
-  $('.event-date-badge').each(function(idx) {
-    var mod = idx % badgeColors.length;
-    $(this).css('background-color', badgeColors[mod]);
-  });
-
-  $('.event-image img').each(function(idx) {
-    var mod = idx % badgeColors.length;
-    $(this).css('border', '2px solid ' + badgeColors[mod]);
-  });
-
-
 </script>
 
 {% endblock %}

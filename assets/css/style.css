@@ -645,6 +645,7 @@ footer {
         width: 35px;
         color: #fff;
         letter-spacing: 1px;
+        background-color: black;
     }
 
         .event-date-badge hr {
