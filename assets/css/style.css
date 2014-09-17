@@ -601,9 +601,12 @@ footer {
     margin-bottom: 10px;
     border: 1px solid #333;
     text-align: center;
+    height: 300px;
+    overflow-y: scroll;
 }
     .event-box:hover, .event-box:focus {
        border: 1px solid black; 
+        /* border: 1px solid rgb(50, 255, 80); */
     }
 
     .event-box hr {
@@ -685,7 +688,7 @@ footer {
             color: rgba(50, 50, 250, 1);
         }
         .event-linker a:hover, .event-linker a:focus {
-            color: rgba(20, 20, 200, 1);
+             color: rgba(20, 20, 200, 1);
         }
 
     .event-description {
@@ -700,8 +703,7 @@ footer {
         margin-top: 5px;
     }
         .event-image img {
-            height: 150px;
-            max-width: 100%;
+            max-width: 98%;
             border-radius: 2px;
         }
 
