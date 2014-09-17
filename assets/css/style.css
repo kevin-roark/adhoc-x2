@@ -603,7 +603,7 @@ footer {
     text-align: center;
 }
     .event-box:hover, .event-box:focus {
-        border: 1px solid rgb(50, 255, 80);
+       border: 1px solid black; 
     }
 
     .event-box hr {
