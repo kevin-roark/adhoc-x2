@@ -7,7 +7,7 @@
   <meta property="og:title" content="{{ object.title }}" />
   <meta property="og:image" content="{{ object.header_image.medium_image.url }}" />
   <meta property="og:url" content="{{ object.get_permalink }}" />
-  <meta property="og:description" content="{{ object.body }}" />
+  <meta property="og:description" content="{% autoescape off %}{{ object.body }}{% endautoescape %}" />
 {% endblock %}
 
 {% block content %}
