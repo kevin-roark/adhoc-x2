@@ -7,6 +7,8 @@ from taggit.managers import TaggableManager
 from imagekit.models import ImageSpec
 from imagekit.processors import resize
 
+import re
+
 from music.models import MusicEmbed
 
 class Image(models.Model):
@@ -51,6 +53,8 @@ class Embed(models.Model):
     def __unicode__(self):
         return self.title
 
+cleanregex = re.compile(r'<[^>]+>')
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     formatted_title = models.CharField(max_length=255, blank=True, help_text='Use this if you want italics in your title, use &lt;em&gt;thing in italics&lt;/em&gt;')
@@ -79,6 +83,9 @@ class Post(models.Model):
 
     def tag_list(self):
         return ",".join([t.name for t in self.tags.all()])
+
+    def clean_body(self):
+        return cleanregex.sub('', self.body) 
 
     class Meta:
         ordering = ['-timestamp']
