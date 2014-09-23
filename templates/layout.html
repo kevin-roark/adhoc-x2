@@ -12,7 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url rss_feed %}" />
     {% block css %}{% endblock css %}
 
-    <meta prefix="fb: http://ogp.me/ns/fb#" property="fb:app_id" content="130074127082614">
+    <meta property="fb:app_id" content="130074127082614" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AdHoc.fm" />
     {% block meta_description %}
@@ -26,14 +26,24 @@
   <body>
     <!-- Facebook bullshit -->
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=130074127082614";
-      fjs.parentNode.insertBefore(js, fjs);
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '130074127082614',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+ 
 
     <div id="texture_wrapper">
       <div class="container">
