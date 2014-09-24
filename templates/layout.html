@@ -13,6 +13,7 @@
     {% block css %}{% endblock css %}
 
     <meta property="fb:app_id" content="130074127082614" />
+    <meta property="fb:admins" content="100000919641751" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AdHoc.fm" />
     {% block meta_description %}
@@ -31,7 +32,7 @@
         FB.init({
           appId      : '130074127082614',
           xfbml      : true,
-          version    : 'v2.0'
+          version    : 'v2.1'
         });
       };
 
@@ -41,9 +42,9 @@
          js = d.createElement(s); js.id = id;
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+       }(document, 'script', 'facebook-jssdk'));
     </script>
- 
+
 
     <div id="texture_wrapper">
       <div class="container">
