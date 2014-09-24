@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    {% block meta_description %}
+      <meta property="og:title" content="AdHoc" />
+      <meta property="og:image" content="http://adhoc.fm/static/images/logo.png" />
+      <meta property="og:url" content="http://adhoc.fm/" />
+    {% endblock %}
+
     <title>AdHoc {% block page_title %}{% endblock %}</title>
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -10,7 +16,6 @@
 	 <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css" />
          <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico?v=6"/>
    {% block css %}{% endblock css %}
-   {% block meta_description %}{% endblock meta_description %}
   </head>
 
   <body class="simple">

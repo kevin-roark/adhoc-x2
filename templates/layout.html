@@ -2,15 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>AdHoc {% block page_title %}{% endblock %}</title>
-    <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/bootstrap.min.css" />
-    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css?v=2.3" />
-    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico?v=6"/>
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url rss_feed %}" />
-    {% block css %}{% endblock css %}
 
     <meta property="fb:app_id" content="130074127082614" />
     <meta property="fb:admins" content="100000919641751" />
@@ -21,6 +12,17 @@
       <meta property="og:image" content="http://adhoc.fm/static/images/logo.png" />
       <meta property="og:url" content="http://adhoc.fm/" />
     {% endblock meta_description %}
+
+    <title>AdHoc {% block page_title %}{% endblock %}</title>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/bootstrap.min.css" />
+    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css?v=2.3" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico?v=6"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url rss_feed %}" />
+    {% block css %}{% endblock css %}
+
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   </head>
 
