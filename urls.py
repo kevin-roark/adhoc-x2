@@ -34,3 +34,8 @@ if settings.DEBUG:
         (r'^500/$', 'django.views.generic.simple.direct_to_template', {'template': '500.html'}),
         (r'^404/$', 'django.views.generic.simple.direct_to_template', {'template': '404.html'}),
     )
+
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
