@@ -22,6 +22,7 @@
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico?v=6"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url rss_feed %}" />
     {% block css %}{% endblock css %}
+    {% block headjs %}{% endblock headjs %}
 
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
   </head>
@@ -77,7 +78,7 @@
               <a class="features-link" href="{% url posts_by_tag tag='features' %}">Features</a>
             </li>
             <li{% if current_nav == 'events' %} class="active"{% endif %}>
-              <a class="events-link" href="/events/">Events</a>
+              <a class="events-link" href="http://facebook.com/adhocfm/events">Events</a>
             </li>
             <li{% if flatpage.title == 'About' %} class="active"{% endif %}>
               <a class="about-link" href="/about/">About</a>

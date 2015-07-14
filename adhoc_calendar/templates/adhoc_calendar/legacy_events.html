@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% load events %}
+
+{% block page_title %}Upcoming Events{% endblock %}
+
+{% block meta_description %}
+  <meta property="og:title" content="AdHoc Events" />
+  <meta property="og:url" content="http://www.adhoc.fm/events/" />
+{% endblock %}
+
+{% block content_rows %}
+  <div class="row">
+    <div class="span6 offset3">
+      <div class="event-list-signup-container">
+        <div class="join-event-list-header">Join our events mailing list: </div>
+        <form action="http://adhoc.us5.list-manage.com/subscribe/post?u=bac56a8a56c832c80787b6ddd&amp;id=28e25f4c0b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline event-signup-form" target="_blank">
+          <fieldset>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="event-signup-button">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      {% for event in events %}
+        {% if forloop.counter0|divisibleby:3 %}
+          {% event_box event %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="span4">
+      {% for event in events %}
+        {% if forloop.counter0|add:"-1"|divisibleby:3 %}
+          {% event_box event %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="span4">
+      {% for event in events %}
+        {% if forloop.counter0|add:"-2"|divisibleby:3 %}
+          {% event_box event %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if not events %}
+    <h1 style="text-align: center; padding: 1em; background: white;">No events to show just yet.</h1>
+  {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+  function choice(arr) {
+    var i = Math.floor(Math.random() * arr.length);
+    return arr[i];
+  }
+
+  function shuffle(arr) {
+    arr.sort(function() { return 0.5 - Math.random() });
+  }
+</script>
+
+{% endblock %}
